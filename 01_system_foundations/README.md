@@ -1,0 +1,52 @@
+# 01. Fundamentals: AI Computing & System Architecture
+
+이 폴더는 AI 반도체 설계 및 소프트웨어 가속의 핵심 기반인 **연산(Computation)** 과 **메모리(Memory)** 의 관계를 다룹니다. [analysis](./analysis), [lab](./lab), [mastery](./mastery)로 이어지는 단계별 학습을 통해 하드웨어 인지적(Hardware-aware) 프로그래밍 역량을 배양합니다.
+
+---
+
+## 📂 저장소 워크플로우 (A-L-M)
+
+본 저장소는 엔지니어링 표준 사이클을 따라 구성되어 있습니다.
+
+1.  **analysis**: 시스템 아키텍처 및 연산 원리에 대한 이론적 분석
+2.  **lab**: 분석한 가설을 실제 코드로 구현하고 데이터를 수집하는 실습 단계
+3.  **mastery**: 수집된 데이터를 해석하고 지식의 무결성을 검증하는 숙달 단계
+
+---
+
+## 📝 커리큘럼 로드맵
+
+### Unit 1. 행렬 곱셈 연산과 실행 계층 분석
+AI 연산의 기초인 MatMul을 통해 소프트웨어 인터프리터 오버헤드와 하드웨어 가속(SIMD)의 차이를 이해합니다.
+
+*   **[analysis]** [01_matmul_execution.md](./analysis/01_matmul_execution.md): 실행 계층에 따른 성능 차이 분석
+*   **[lab]** [01_matmul_benchmark.py](./lab/01_matmul_benchmark.py): Python Loop vs NumPy Vectorization 성능 측정
+*   **[mastery]** [01_performance.md](./mastery/01_performance.md): 연산 복잡도 및 GFLOPs 지표 검증
+
+### Unit 2. 메모리 계층 구조와 지연 시간 프로파일링
+메모리 지연 시간(Latency)을 직접 측정하여 캐시 지역성(Locality)이 성능에 미치는 치명적인 영향을 분석합니다.
+
+*   **[analysis]** [02_memory_subsystem.md](./analysis/02_memory_subsystem.md): 캐시 위계 및 메모리 접근 패턴 이론
+*   **[lab]** [02_cache_hierarchy_bench.py](./lab/02_cache_hierarchy_bench.py): Pointer Chasing을 통한 레이턴시 실측
+*   **[result]** [02_working_set_result.png](./lab/02_working_set_result.png): 하드웨어별 메모리 워킹셋 측정 그래프
+*   **[mastery]** [02_memory_latency.md](./mastery/02_memory_latency.md): 캐시 미스 및 공간/시간 지역성 개념 숙달
+
+---
+
+## 🏗️ Directory Structure
+```text
+01_Fundamentals/
+├── README.md
+├── analysis/
+│   ├── 01_matmul_execution.md
+│   └── 02_memory_subsystem.md
+├── lab/
+│   ├── 01_matmul_benchmark.py
+│   ├── 02_cache_hierarchy_bench.py
+│   └── 02_working_set_result.png
+└── mastery/
+    ├── 01_performance.md
+    └── 02_memory_latency.md
+```
+---
+*본 저장소는 하드웨어 인지적 최적화의 통찰을 추구하며, 모든 실습 데이터는 검증되었습니다.*
