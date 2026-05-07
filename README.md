@@ -36,3 +36,9 @@ AI_CHIPS/
 ├── 03_npu_prototyping/
 └── 04_system_optimization/
 ```
+---
+## ⚖️ License & Copyright
+This project is licensed under the terms of the **MIT License**.
+Copyright © 2026 Ogi. All rights reserved.
+<br>
+*연구 목적의 참조는 환영하며, 인용 시 출처를 밝혀주시기 바랍니다.*
