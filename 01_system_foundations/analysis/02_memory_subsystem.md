@@ -97,4 +97,4 @@ DRAM 접근은 L1 캐시 접근보다 **약 100배** 느리며, 이 격차를 �
 1. **숙련도 검증**: 본 문서에서 다룬 지연 시간 및 접근 패턴에 대한 이해도는 [02_memory_latency.md](../mastery/02_memory_latency.md)에서 퀴즈 형식을 통해 확인할 수 있습니다.
 2. **플랫폼 의존성**: 메모리 지연 시간의 절대값과 접근 패턴별 성능 비율은 CPU 아키텍처(Intel, AMD, Apple Silicon 등) 및 OS의 메모리 관리 방식에 따라 상이할 수 있습니다.[cite: 1]
 3. **데이터 시각화**: 실험 결과에 대한 시각적 지표는 [02_working_set_result.png](../lab/02_working_set_result.png) 파일을 참조해 주세요.
-4. **학습 목차**: 전체 프로젝트의 구성과 학습 순서는 최상위 [README.md](../README.md)에서 확인 가능합니다.
+4. **학습 목차**: 전체 프로젝트의 구성과 학습 순서는 최상위 [README.md](/README.md)에서 확인 가능합니다.
