@@ -1,0 +1,33 @@
+# --- Python & Virtual Environment ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# --- IDE & Editors ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Verilog & Simulation ---
+*.log
+*.vcd
+*.ivc
+*.jou
+*.pb
+sim_build/          # cocotb build directory
+results.xml         # test results
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Data & Results ---
+# *.csv
+ *.png
+ !02_working_set_result.png
