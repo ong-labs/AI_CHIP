@@ -1,6 +1,6 @@
 # 01_performance.md: Fundamentals of Matrix Multiplication
 
-이 문서는 [01_matmul_execution.md](../analysis/01_matmul_execution.md)에서 심층 분석한 행렬 곱셈(MatMul)의 실행 계층 이론과 성능 최적화 원리를 바탕으로 구성되었습니다. 실습을 통해 확인한 Python 루프와 NumPy 벡터화 연산의 성능 격차를 시스템 아키텍처 관점에서 재정리하고, 핵심 개념의 숙달도를 검증합니다.
+이 문서는 [01_matmul_execution_report.md](../analysis/01_matmul_execution_report.md)에서 심층 분석한 행렬 곱셈(MatMul)의 실행 계층 이론과 성능 최적화 원리를 바탕으로 구성되었습니다. 실습을 통해 확인한 Python 루프와 NumPy 벡터화 연산의 성능 격차를 시스템 아키텍처 관점에서 재정리하고, 핵심 개념의 숙달도를 검증합니다.
 
 ## 개념 확인 문제 (Quiz)
 
@@ -41,5 +41,5 @@
 1. **환경 의존성**: 본 문서에 기재된 GFLOPs 및 실행 시간 수치는 특정 하드웨어(CPU/RAM) 환경에서의 측정값이므로, 실행 환경에 따라 결과가 다를 수 있습니다.
 2. **검증의 중요성**: 성능 향상 수치보다 중요한 것은 `np.allclose`를 통해 연산의 정확성이 보장되었는지 확인하는 과정입니다.
 3. **연결 문서**:
-    * 상세한 성능 차이의 원인은 [01_matmul_execution.md](../analysis/01_matmul_execution.md)에서 확인할 수 있습니다.
+    * 상세한 성능 차이의 원인은 [01_matmul_execution_report.md](../analysis/01_matmul_execution_report.md)에서 확인할 수 있습니다.
     * 전체 학습 목차는 [README.md](../README.md)를 참조해 주세요.
