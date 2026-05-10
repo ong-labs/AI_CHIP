@@ -37,7 +37,9 @@
 ### 2.2 `theoretical_peak_gflops()`: 이론적 한계치 산출
 물리적인 제원을 바탕으로 '이론적으로 도달 가능한 최상의 성능'을 계산합니다.
 
-$$\text{per\_core\_peak} = \text{clock\_GHz} \times \text{SIMD\_lane\_count} \times \text{FMA\_factor}$$
+$$
+\text{Peak GFLOPS} = \text{Clock (GHz)} \times \text{SIMD Lane} \times \text{FMA Factor}
+$$
 
 * **FMA(Fused Multiply-Add)의 의미**: $d = a \times b + c$ 연산을 단일 사이클에 수행합니다.
     * 곱셈($1$ $FLOP$) + 덧셈($1$ $FLOP$) = $2$ $FLOP$

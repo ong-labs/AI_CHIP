@@ -31,12 +31,15 @@ CPU 아키텍처에 따라 지원하는 명령어 집합(ISA)과 레지스터 �
 ### 1.3 Peak GFLOPS 공식
 CPU 코어가 초당 수행할 수 있는 최대 부동소수점 연산 횟수를 계산하는 공식입니다.
 
-$$\text{Peak GFLOPS} = \text{Clock(GHz)} \times \text{SIMD\_Lane} \times \text{FMA\_Factor}$$
+$$
+\text{Peak GFLOPS} = \text{Clock (GHz)} \times \text{SIMD Lane} \times \text{FMA Factor}
+$$
 
 * **FMA_factor**: FMA(Fused Multiply-Add) 지원 시 2를 적용합니다.
 * **예시 계산**:
     * 3 GHz &times; AVX2 (8 lane) &times; FMA(2) &rarr; 48 GFLOPS / core
     * 8 코어 모두 사용 시 &rarr; **~384 GFLOPS**
+* **SIMD Lane**: 아키텍처별로 한 번에 처리하는 데이터 개수(float32 기준)를 의미합니다.
 
 ---
 
