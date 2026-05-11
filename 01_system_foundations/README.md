@@ -40,6 +40,14 @@ AI 연산의 기초인 MatMul을 통해 소프트웨어 인터프리터 오버�
 * **[lab]** [03_simd_bench.py](./lab/03_simd_bench.py): SIMD Peak GFLOPS 및 성능 가속 배율 측정 실습
 * **[mastery]** [03_parallel_computing.md](./mastery/03_parallel_computing.md): SIMD 활용 및 병렬 연산 핵심 개념 숙달
 
+### Unit 4. Roofline 모델과 성능 병목 분석
+하드웨어의 물리적 한계(Peak GFLOPS, BW)와 알고리즘의 연산 밀도(AI)를 결합하여 성능 병목을 정량적으로 진단합니다.
+
+* **[analysis]** [04_roofline_model.md](./analysis/04_roofline_model.md): Roofline 이론 및 Arithmetic Intensity(AI) 분석
+* **[analysis]** [04_roofline_report.md](./analysis/04_roofline_report.md): CPU 실측 및 GPU 예측 성능 비교 보고서
+* **[lab]** [04_roofline_bench.py](./lab/04_roofline_bench.py): 파라미터 기반 성능 시뮬레이터 구현 및 검증
+* **[mastery]** [04_performance_modeling.md](./mastery/04_performance_modeling.md): 성능 모델링 및 병목 지점 판별 숙달
+
 ---
 
 ## 🏗️ Directory Structure
@@ -51,17 +59,22 @@ AI 연산의 기초인 MatMul을 통해 소프트웨어 인터프리터 오버�
 │   ├── 02_cache_hierarchy_report.md   # 캐시 위계 실측 보고서
 │   ├── 02_memory_subsystem.md         # 메모리 계층 및 접근 패턴 이론 정리
 │   ├── 03_simd_execution_report.md    # SIMD 활용 및 성능 분해 보고서
-│   └── 03_simd_vectorization.md       # SIMD 가속 이론 및 ISA 분석
+│   ├── 03_simd_vectorization.md       # SIMD 가속 이론 및 ISA 분석
+│   ├── 04_roofline_model.md           # Roofline 이론 및 AI 분석
+│   └── 04_roofline_report.md          # 성능 병목 실측 분석 보고서
 ├── lab/
 │   ├── results/                       # 실험 결과 데이터 및 시각화 지표
 │   │   └── 02_working_set_result.png 
 │   ├── 01_matmul_bench.py             # 연산 성능 벤치마크 코드
 │   ├── 02_cache_hierarchy_bench.py    # 메모리 레이턴시 측정 코드
-│   └── 03_simd_bench.py               # SIMD 성능 측정 코드
+│   ├── 03_simd_bench.py               # SIMD 성능 측정 및 분해 코드
+│   └── 04_roofline_bench.py           # Roofline 기반 성능 시뮬레이터
 └── mastery/
     ├── 01_performance.md              # 성능 분석 핵심 개념 요약
     ├── 02_memory_latency.md           # 메모리 계층 숙달 퀴즈 및 정리
-    └── 03_parallel_computing.md       # 병렬 연산 및 아키텍처 숙달 퀴즈
+    ├── 03_parallel_computing.md       # 병렬 연산 숙달 퀴즈
+    └── 04_performance_modeling.md     # 성능 모델링 및 병목 판별 숙달
+
 ```
 ---
 *본 저장소는 하드웨어 인지적 최적화의 통찰을 추구하며, 모든 실습 데이터는 검증되었습니다.*
