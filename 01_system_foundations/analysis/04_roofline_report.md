@@ -48,7 +48,6 @@ class RooflineResult:
     gflops: float
     ai: float
     bound: str
-
 ```
 
 | 필드 | 의미 |
@@ -80,8 +79,6 @@ Roofline 모델의 이론적 한계를 도출하는 핵심 함수로, 다음의 
 * **Naive**: 매 연산마다 DRAM에 직접 접근하는 최악의 상황.
 * **실제(Actual)**: 캐시 계층을 통한 Cache Reuse 발생.
 
-
-
 > **💡 왜 GPU의 `reuse_factor`가 매우 큰가?**
 > "RTX 4090"의 경우 `reuse: 64`, "H100"의 경우 `reuse: 128`에 달합니다. GPU는 아키텍처 레벨에서 **Shared Memory, Tiling, Tensor Core Blocking**을 강하게 지원하여 데이터 재사용성을 극대화하기 때문입니다.
 
@@ -101,7 +98,6 @@ Roofline 모델의 이론적 한계를 도출하는 핵심 함수로, 다음의 
 
 ```python
 if t_compute >= t_memory:
-
 ```
 
 * **의미**: 연산 시간이 더 오래 걸린다면 연산기가 병목이 되는 **Compute Bound** 상태입니다.
@@ -110,7 +106,6 @@ if t_compute >= t_memory:
 #### 🎯 핵심 철학 요약
 
 Roofline 모델의 본질은 다음 공식으로 귀결됩니다.
-
 
 $$Performance\leq\min(Peak\ Compute,\ AI\times Bandwidth)$$
 
@@ -130,7 +125,6 @@ SPECS_FP32 = {
         "reuse": 64
     }
 }
-
 ```
 
 | 항목 | 의미 |
