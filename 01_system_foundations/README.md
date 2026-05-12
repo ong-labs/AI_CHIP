@@ -48,6 +48,15 @@ AI 연산의 기초인 MatMul을 통해 소프트웨어 인터프리터 오버�
 * **[lab]** [04_roofline_bench.py](./lab/04_roofline_bench.py): 파라미터 기반 성능 시뮬레이터 구현 및 검증
 * **[mastery]** [04_performance_modeling.md](./mastery/04_performance_modeling.md): 성능 모델링 및 병목 지점 판별 숙달
 
+### Unit 5. 하드웨어 아키텍처 비교 분석 (CPU vs GPU vs NPU)
+AI 가속기의 핵심인 NPU의 구조적 특징을 이해하고, Roofline 모델을 확장하여 다양한 하드웨어 아키텍처의 성능을 정량적으로 비교 분석합니다.
+
+* **[analysis]** [05_hw_architecture_comp.md](./analysis/05_hw_architecture_comp.md): CPU/GPU/NPU 아키텍처 심층 비교
+* **[analysis]** [05_hw_architecture_report.md](./analysis/05_hw_architecture_report.md): 하드웨어 아키텍처별 성능 예측 보고서
+* **[lab]** [05_hw_architecture_bench.py](./lab/05_hw_architecture_bench.py): 확장된 Roofline 기반 성능 시뮬레이터
+* **[result]** [05_cpu_gpu_npu_compare.png](./lab/results/05_cpu_gpu_npu_compare.png): 하드웨어 아키텍처별 가속 배율 비교 그래프
+* **[mastery]** [05_system_perf_expert.md](./mastery/05_system_perf_expert.md): 아키텍처 비교 분석 및 성능 모델링 숙달
+
 ---
 
 ## 🏗️ Directory Structure
@@ -61,19 +70,24 @@ AI 연산의 기초인 MatMul을 통해 소프트웨어 인터프리터 오버�
 │   ├── 03_simd_execution_report.md    # SIMD 활용 및 성능 분해 보고서
 │   ├── 03_simd_vectorization.md       # SIMD 가속 이론 및 ISA 분석
 │   ├── 04_roofline_model.md           # Roofline 이론 및 AI 분석
-│   └── 04_roofline_report.md          # 성능 병목 실측 분석 보고서
+│   ├── 04_roofline_report.md          # 성능 병목 실측 분석 보고서
+│   ├── 05_hw_architecture_comp.md     # CPU/GPU/NPU 아키텍처 심층 비교
+│   └── 05_hw_architecture_report.md   # 하드웨어 아키텍처별 성능 예측 보고서
 ├── lab/
 │   ├── results/                       # 실험 결과 데이터 및 시각화 지표
-│   │   └── 02_working_set_result.png 
+│   │   ├── 02_working_set_result.png 
+│   │   └── 05_cpu_gpu_npu_compare.png # 하드웨어 아키텍처별 비교 그래프
 │   ├── 01_matmul_bench.py             # 연산 성능 벤치마크 코드
 │   ├── 02_cache_hierarchy_bench.py    # 메모리 레이턴시 측정 코드
 │   ├── 03_simd_bench.py               # SIMD 성능 측정 및 분해 코드
-│   └── 04_roofline_bench.py           # Roofline 기반 성능 시뮬레이터
+│   ├── 04_roofline_bench.py           # Roofline 기반 성능 시뮬레이터
+│   └── 05_hw_architecture_bench.py    # 확장된 Roofline 기반 성능 시뮬레이터
 └── mastery/
     ├── 01_performance.md              # 성능 분석 핵심 개념 요약
     ├── 02_memory_latency.md           # 메모리 계층 숙달 퀴즈 및 정리
     ├── 03_parallel_computing.md       # 병렬 연산 숙달 퀴즈
-    └── 04_performance_modeling.md     # 성능 모델링 및 병목 판별 숙달
+    ├── 04_performance_modeling.md     # 성능 모델링 및 병목 판별 숙달
+    └── 05_system_perf_expert.md       # 아키텍처 비교 분석 및 성능 모델링 숙달
 
 ```
 ---

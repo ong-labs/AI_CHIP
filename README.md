@@ -28,7 +28,7 @@ NPU의 핵심 유닛(MAC) 설계부터 통합 시뮬레이션 환경 구축까�
 ## 🏗️ Directory Structure
 
 ```text
-AI_CHIPS/
+npu-aware-engineering/
 ├── README.md
 ├── 00_docs/
 ├── 01_system_foundations/
