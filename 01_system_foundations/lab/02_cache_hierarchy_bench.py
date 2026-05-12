@@ -5,6 +5,12 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 
+from pathlib import Path
+
+base_path = Path(__file__).resolve().parent
+output_dir = base_path / "results"
+output_dir.mkdir(parents=True, exist_ok=True)
+
 np.seterr(over="ignore", divide="ignore", invalid="ignore")
 
 
@@ -65,7 +71,7 @@ def main() -> None:
     plt.title("Cache hierarchy via pointer chasing")
     plt.grid(True, which="both", alpha=0.3)
     plt.tight_layout()
-    plt.savefig("02_working_set_result.png", dpi=100)
+    plt.savefig(output_dir / "02_working_set_result.png", dpi=100)
     print("\nSaved: 02_working_set_result.png")
 
     print("\n=== Experiment 2: NumPy row vs column sum (axis=1 vs axis=0) ===")
