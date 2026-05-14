@@ -1,6 +1,6 @@
 # 02_systolic_array_report.md: Cycle-Accurate Simulation of Weight-Stationary Systolic Array
 
-본 보고서는 [02_tpu_ws_systolic_bench.py](../lab/02_tpu_ws_systolic_bench.py) 실습을 바탕으로 작성되었습니다. Google의 TPU(Tensor Processing Unit)와 같은 하드웨어 가속기가 행렬곱을 수행하는 과정을 사이클(Cycle) 단위로 시뮬레이션하여, 데이터의 흐름과 파이프라인의 동작 원리를 정량적으로 분석합니다.
+본 보고서는 [02_tpu_ws_systolic_bench.py](../lab/02_tpu_ws_systolic_bench.py) 실습을 바탕으로 작성되었습니다. Google의 TPU와 같은 하드웨어 가속기의 연산 과정을 사이클 단위로 시뮬레이션하여 정량적 지표를 도출하며, **이 데이터는 이후 [02_systolic_array_scrutiny.md](./02_systolic_array_scrutiny.md)의 동작 분석과 [02_systolic_array_trace.md](./02_systolic_array_trace.md)의 하드웨어 매핑을 위한 기초 자료가 됩니다.**
 
 ---
 
@@ -11,8 +11,6 @@
 * **`np.zeros_like()`**:
 * **기능**: 인자로 주어진 기존 배열과 동일한 **Shape(크기)** 및 dtype(자료형)을 가지되, 모든 원소가 **0**으로 초기화된 새 배열을 생성합니다.
 * **활용**: 각 사이클마다 PE(Processing Element) 사이를 이동하는 데이터 패킷을 초기화하는 데 사용됩니다.
-
-
 
 ---
 
@@ -35,7 +33,6 @@
 * $A[0, 0] \rightarrow cycle\ 0$
 * $A[0, 1], A[1, 0] \rightarrow cycle\ 1$
 * $A[0, 2], A[1, 1], A[2, 0] \rightarrow cycle\ 2$
-
 
 * **이점**: 이 비대칭 스케줄링 덕분에 여러 PE가 충돌 없이 동시에 계산을 수행할 수 있습니다.
 
@@ -66,7 +63,8 @@
 
 * **이론적 유효 기간**: $M + K + N - 1 = 11\ cycles$ ($4 \times 4 \times 4$ 기준).
 * **실측 및 가동 효율 (보완)**: 총 12사이클이 소요되었으며, 초기 **Pipeline Fill**과 마지막 **Drain** 구간(데이터가 차오르고 빠지는 시간)을 제외하고 모든 PE가 동시에 연산에 참여하는 'Peak Utilization' 구간은 전체의 약 30% 수준입니다.
-* **확장 및 스케일링**: $16 \times 16 \times 16$ 테스트 결과($48\ cycles$), 행렬 크기가 커질수록 전체 시간 대비 파이프라인 예열/냉각 시간이 차지하는 비중이 줄어듭니다. 이는 대규모 행렬 연산 시 하드웨어의 **실질 활용률(Effective Utilization)**이 비약적으로 상승함을 증명하며, NPU가 대형 모델 연산에서 압도적인 효율을 내는 근거가 됩니다.
+* **확장 및 스케일링**: $16 \times 16 \times 16$ 테스트 결과, 행렬 크기가 커질수록 파이프라인 지연 시간의 비중이 줄어듦을 확인했습니다.
+> * **Expert's Insight**: 실무적으로 시스톨릭 어레이의 효율은 **$M/(M+K+N-1)$** 공식에 의해 결정됩니다. 이는 소형 행렬 연산에서는 하드웨어 낭비가 심하지만, 최근의 대형 언어 모델(LLM)처럼 거대 행렬을 다루는 워크로드에서는 **95% 이상의 실질 가동 효율(Effective Utilization)**을 달성할 수 있음을 시사하며, 이것이 곧 NPU가 대규모 AI 추론의 표준이 된 결정적 이유입니다.
 
 ### 4.2 결과 정확성
 
@@ -87,3 +85,7 @@
 ### 5.2 최종 요약
 
   본 실습은 **Weight-Stationary Systolic Array**가 가중치를 고정한 상태에서 입력과 부분합을 흐르게 하여 행렬곱을 수행함을 증명합니다. 파이프라인 Fill과 Drain 과정을 포함하여 약 **$M + K + N$ 사이클** 만에 정확한 연산 결과를 생성하는 효율적인 가속기 구조를 확인하였습니다.
+
+## 💡 참고 사항 (Notes)
+* 본 보고서의 실측 사이클 데이터는 시뮬레이터의 `trace` 로그와 $M+K+N-1$ 수식의 정합성을 검증한 결과입니다.
+* 초기 **Pipeline Fill** 구간의 지연 시간은 하드웨어 설계 시 해결해야 할 주요 Latency 요소로 관리되어야 합니다.
