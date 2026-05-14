@@ -29,5 +29,3 @@ desktop.ini
 
 # --- Data & Results ---
 # *.csv
- *.png
- !02_working_set_result.png
