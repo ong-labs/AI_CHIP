@@ -4,12 +4,13 @@
 
 ---
 
-## 📂 저장소 워크플로우 (A-L)
+## 📂 저장소 워크플로우 (A-L-M)
 
 본 저장소는 엔지니어링 표준 사이클을 따라 구성되어 있습니다.
 
 1. **analysis**: 데이터 흐름, 에너지 효율 및 하드웨어 타이밍에 대한 이론적 분석
 2. **lab**: 아키텍처 시뮬레이터를 코드로 구현하고 사이클 단위 데이터를 수집하는 실습 단계
+3. **mastery**: 수집된 데이터를 해석하고 가속기 설계 지식의 무결성을 검증하는 숙달 단계
 
 ---
 
@@ -27,7 +28,10 @@
 Google TPU의 핵심 구조인 Systolic Array를 사이클 단위로 시뮬레이션하여, 파이프라인의 Fill/Drain 과정과 하드웨어 활용률(Utilization)의 동역학을 정량적으로 분석합니다.
 
 * **[analysis]** [02_systolic_array_report.md](./analysis/02_systolic_array_report.md): Weight-Stationary 시뮬레이션 및 타이밍 분석 보고서
+* **[analysis]** [02_systolic_array_scrutiny.md](./analysis/02_systolic_array_scrutiny.md): Systolic Array 동작 방식 세부 분해 및 Wavefront 분석
+* **[analysis]** [02_systolic_array_trace.md](./analysis/02_systolic_array_trace.md): NPU 핵심 로직의 하드웨어 매핑 및 설계 사양 분석
 * **[lab]** [02_tpu_ws_systolic_bench.py](./lab/02_tpu_ws_systolic_bench.py): Cycle-accurate 가중치 고정형 시스톨릭 어레이 시뮬레이터
+* **[mastery]** [02_accelerator_mastery.md](./mastery/02_accelerator_mastery.md): 시스톨릭 어레이 및 데이터 흐름 설계 지식 숙달 검증
 
 ---
 
@@ -37,11 +41,15 @@ Google TPU의 핵심 구조인 Systolic Array를 사이클 단위로 시뮬레�
 02_accelerator_architecture/
 ├── README.md
 ├── analysis/
-│   ├── 01_matmul_dataflow_report.md  # 데이터 흐름 및 재사용 전략 분석
-│   └── 02_systolic_array_report.md   # 시스톨릭 어레이 타이밍 분석 보고서
-└── lab/
-    ├── 01_matmul_loop_map_bench.py   # 루프 매핑 및 스테이셔너리 분류 실습
-    └── 02_tpu_ws_systolic_bench.py   # 주기 정밀 시스톨릭 어레이 시뮬레이터
+│   ├── 01_matmul_dataflow_report.md    # 데이터 흐름 및 재사용 전략 분석
+│   ├── 02_systolic_array_report.md     # 시스톨릭 어레이 타이밍 분석 보고서
+│   ├── 02_systolic_array_scrutiny.md   # 시스톨릭 어레이 동작 방식 세부 분해
+│   └── 02_systolic_array_trace.md      # NPU 핵심 로직의 하드웨어 매핑 분석
+├── lab/
+│   ├── 01_matmul_loop_map_bench.py     # 루프 매핑 및 스테이셔너리 분류 실습
+│   └── 02_tpu_ws_systolic_bench.py     # 주기 정밀 시스톨릭 어레이 시뮬레이터
+└── mastery/
+    └── 02_accelerator_mastery.md       # 가속기 설계 지식 검증 및 숙달
 ```
 
 ---
