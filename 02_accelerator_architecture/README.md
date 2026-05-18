@@ -59,6 +59,8 @@ Google TPU의 핵심 구조인 Systolic Array를 사이클 단위로 시뮬레�
 │   ├── 03_dataflow_cost_report.md        # 데이터플로우별 메모리 트래픽 비교 보고서
 │   └── 04_roofline_integrated_report.md  # 하드웨어 아키텍처별 루프라인 통합 분석 보고서
 ├── lab/
+│   ├── results/                          # 실험 결과 데이터 및 시각화 지표
+│   │   └── 04_workload_compare.png       # 루프라인 모델 기반 워크로드 성능 비교 차트
 │   ├── 01_matmul_loop_map_bench.py       # 루프 매핑 및 스테이셔너리 분류 실습
 │   ├── 02_tpu_ws_systolic_bench.py       # 주기 정밀 시스톨릭 어레이 시뮬레이터
 │   ├── 03_memory_access_bench.py         # 행렬곱 타일링 기반 메모리 접근 카운팅 실습
