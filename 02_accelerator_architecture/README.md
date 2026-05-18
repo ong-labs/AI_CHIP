@@ -33,6 +33,17 @@ Google TPU의 핵심 구조인 Systolic Array를 사이클 단위로 시뮬레�
 * **[lab]** [02_tpu_ws_systolic_bench.py](./lab/02_tpu_ws_systolic_bench.py): Cycle-accurate 가중치 고정형 시스톨릭 어레이 시뮬레이터
 * **[mastery]** [02_accelerator_mastery.md](./mastery/02_accelerator_mastery.md): 시스톨릭 어레이 및 데이터 흐름 설계 지식 숙달 검증
 
+### Unit 3. 데이터플로우별 메모리 액세스 및 에너지 비용 모델링
+온칩 레지스터와 외부 DRAM 간의 압도적인 에너지 비용 비대칭성을 이해하고, 타일링(Tiling) 조건하에서 WS, OS, IS 각 데이터플로우가 유발하는 DRAM 트래픽을 정량적으로 분석합니다.
+* **[analysis]** [03_dataflow_cost_report.md](./analysis/03_dataflow_cost_report.md): WS / OS / IS 데이터플로우별 메모리 트래픽 비교 보고서
+* **[lab]** [03_memory_access_bench.py](./lab/03_memory_access_bench.py): 행렬곱 타일링 기반 메모리 접근 카운팅 시뮬레이터
+
+### Unit 4. 통합 루프라인 모델 비교 분석
+다양한 하드웨어(CPU, GPU, TPU, NPU)의 물리적 한계 지표를 바탕으로, 워크로드의 스케일과 특성에 따라 성능 병목 지점(Compute vs Memory vs Overhead)이 변하는 변곡점을 Roofline 분석 기법으로 규명합니다.
+* **[analysis]** [04_roofline_integrated_report.md](./analysis/04_roofline_integrated_report.md): 하드웨어 아키텍처별 루프라인 통합 성능 분석 보고서
+* **[lab]** [04_roof_hw_work_bench.py](./lab/04_roof_hw_work_bench.py): 하드웨어-워크로드 간 가속 효율 비교 벤치마크
+* **[mastery]** [04_performance_bottleneck.md](./mastery/04_performance_bottleneck.md): 하드웨어 성능 병목 지점 판단 및 아키텍처 지식 숙달 검증
+
 ---
 
 ## 🏗️ Directory Structure
@@ -41,15 +52,20 @@ Google TPU의 핵심 구조인 Systolic Array를 사이클 단위로 시뮬레�
 02_accelerator_architecture/
 ├── README.md
 ├── analysis/
-│   ├── 01_matmul_dataflow_report.md    # 데이터 흐름 및 재사용 전략 분석
-│   ├── 02_systolic_array_report.md     # 시스톨릭 어레이 타이밍 분석 보고서
-│   ├── 02_systolic_array_scrutiny.md   # 시스톨릭 어레이 동작 방식 세부 분해
-│   └── 02_systolic_array_trace.md      # NPU 핵심 로직의 하드웨어 매핑 분석
+│   ├── 01_matmul_dataflow_report.md      # 데이터 흐름 및 재사용 전략 분석
+│   ├── 02_systolic_array_report.md       # 시스톨릭 어레이 타이밍 분석 보고서
+│   ├── 02_systolic_array_scrutiny.md     # 시스톨릭 어레이 동작 방식 세부 분해
+│   ├── 02_systolic_array_trace.md        # NPU 핵심 로직의 하드웨어 매핑 분석
+│   ├── 03_dataflow_cost_report.md        # 데이터플로우별 메모리 트래픽 비교 보고서
+│   └── 04_roofline_integrated_report.md  # 하드웨어 아키텍처별 루프라인 통합 분석 보고서
 ├── lab/
-│   ├── 01_matmul_loop_map_bench.py     # 루프 매핑 및 스테이셔너리 분류 실습
-│   └── 02_tpu_ws_systolic_bench.py     # 주기 정밀 시스톨릭 어레이 시뮬레이터
+│   ├── 01_matmul_loop_map_bench.py       # 루프 매핑 및 스테이셔너리 분류 실습
+│   ├── 02_tpu_ws_systolic_bench.py       # 주기 정밀 시스톨릭 어레이 시뮬레이터
+│   ├── 03_memory_access_bench.py         # 행렬곱 타일링 기반 메모리 접근 카운팅 실습
+│   └── 04_roof_hw_work_bench.py          # 하드웨어-워크로드 간 가속 효율 비교 벤치마크
 └── mastery/
-    └── 02_accelerator_mastery.md       # 가속기 설계 지식 검증 및 숙달
+    ├── 02_accelerator_mastery.md         # 가속기 설계 지식 검증 및 숙달
+    └── 04_performance_bottleneck.md      # 하드웨어 성능 병목 지점 판단 및 숙달 검증
 ```
 
 ---
