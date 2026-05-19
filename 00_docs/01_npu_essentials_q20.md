@@ -1,4 +1,4 @@
-# 00_npu_essentials_q20.md: AI Hardware Core Concepts
+# 01_npu_essentials_q20.md: AI Hardware Core Concepts
 
 이 문서는 AI 반도체 및 NPU 설계의 핵심 개념 20가지를 정리한 요약본입니다. **analysis** 와 **mastery** 단계의 학습을 돕기 위한 퀵 레퍼런스 가이드로 활용됩니다.
 
