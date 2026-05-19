@@ -14,10 +14,10 @@ AI 하드웨어 설계의 핵심 개념, 용어 사전, 공통 레퍼런스 가�
 ### 01. [system_foundations](./01_system_foundations/)
 컴퓨팅 시스템의 성능 병목을 분석하는 기초를 다룹니다. 메모리 계층 구조와 캐시 효과, SIMD 병렬 처리의 원리를 학습하고, Roofline 모델을 통해 CPU와 GPU의 연산 한계를 예측하고 검증합니다.
 
-### 02. accelerator_architecture
+### 02. [accelerator_architecture](./02_accelerator_architecture)
 Google TPU의 Systolic Array 구조와 다양한 데이터 흐름(Dataflow: WS, OS, IS)을 시뮬레이션합니다. 최신 AI 가속기 아키텍처를 비교 분석하여 워크로드별 최적의 하드웨어 구조를 탐구합니다.
 
-### 03. npu_prototyping
+### 03. [npu_prototyping](./03_npu_prototyping)
 NPU의 핵심 유닛(MAC) 설계부터 통합 시뮬레이션 환경 구축까지의 과정을 다룹니다. Python과 Verilog의 교차 검증을 통해 하드웨어 모델의 정확성을 확보하고 Roofline 분석을 통한 설계 최적화를 수행합니다.
 
 ### 04. system_optimization
