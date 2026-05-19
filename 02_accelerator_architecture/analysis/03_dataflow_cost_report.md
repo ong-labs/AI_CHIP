@@ -36,10 +36,10 @@ MIT의 Eyeriss 논문은 대표적인 데이터 흐름(Dataflow)을 다음과 �
 * **연산 전제**: $A(M \times K) \times B(K \times N) = C(M \times N)$
 * **검증 기준**: 모든 Dataflow에서 `np.allclose(C, A @ B)` 결과는 **True**이나, 메모리 접근량은 서로 다릅니다.
 * **측정 핵심 지표**:
-* **cycles**: 예상 실행 시간
-* **dram_read_bytes**: DRAM에서 읽은 총 데이터 양
-* **dram_write_bytes**: DRAM에 기록한 총 데이터 양
-* **pe_moves**: PE 간 내부 데이터 이동량
+  * **cycles**: 예상 실행 시간
+  * **dram_read_bytes**: DRAM에서 읽은 총 데이터 양
+  * **dram_write_bytes**: DRAM에 기록한 총 데이터 양
+  * **pe_moves**: PE 간 내부 데이터 이동량
 
 ---
 
