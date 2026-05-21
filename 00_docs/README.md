@@ -13,7 +13,7 @@
     * **주요 내용**: SIMD, 캐시 계층 구조, Systolic Array, 정밀도(INT8/32), 성능 지표(Latency/Throughput)
 
 ### 2. 하드웨어 시뮬레이션 및 검증 (RTL Simulation & Verification)
-* **[02_verilog_simulation_quickstart.md](./02_verilog_simulation_quickstart.md)**: NPU 하드웨어 컴포넌트 프로토타이핑 설계 실습에 진입하기 전 학습하는 속성 퀵스타트 가이드입니다.
+* **[02_verilog_simulation_quickstart.md](./02_verilog_simulation_quickstart.md)**: NPU 하드웨어 컴포넌트 프로토타이핑 설계인 [/03_npu_prototyping/lab/03_mac_verilog/](../03_npu_prototyping/lab/03_mac_verilog/) 실습에 진입하기 전 학습하는 속성 퀵스타트 가이드입니다.
     * **주요 내용**: 동기식/조합식 Verilog 모듈 골격, 블로킹(=) 및 넌블로킹(<=) 할당 규칙, 오버플로우 방지를 위한 비트 폭 확장 명세, cocotb 기반의 파이썬 테스트벤치 빌드 패턴, Surfer 파형(Waveform) 뷰어 디버깅 및 트러블슈팅 가이드
 
 ---
@@ -24,6 +24,7 @@
 
 * **Glossary**: AI 반도체 및 컴퓨터 아키텍처 전문 용어 사전
 * **Reading List**: 논문 및 기술 블로그 아카이브
+
 ---
 
 ## 🏗️ Directory Structure
@@ -31,6 +32,6 @@
 ```text
 00_docs/
 ├── README.md
-├── 01_npu_essentials_q20.md
-└── 02_verilog_simulation_quickstart.md
+├── 01_npu_essentials_q20.md                 # NPU 아키텍처 사양 및 20문항 개념 검증 퀴즈
+└── 02_verilog_simulation_quickstart.md      # Verilog 기초, cocotb 검증 및 Surfer 파형 분석 가이드
 ```
