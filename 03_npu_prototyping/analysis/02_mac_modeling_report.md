@@ -2,9 +2,6 @@
 
 본 보고서는 [02_hardware_comp_bench.py](../lab/02_hardware_comp_bench.py) 실습을 바탕으로 작성되었습니다. NPU(Neural Processing Unit)의 가장 핵심적인 산술 연산 유닛인 MAC(Multiply-Accumulate) 유닛의 하드웨어적 동작 원리를 이해하고, 이를 서로 다른 추상화 수준(Abstraction Level)에서 모델링 및 검증하는 기법을 정립하는 것을 목적으로 합니다.
 
-**💡 선행 학습 안내 (Pre-read Guide)**
-> 본 보고서의 하드웨어 수준 검증 및 RTL 파이프라인 설계를 깊이 있게 이해하기 위해, 실습 전 최상위 폴더의 [/00_docs/02_verilog_simulation_quickstart.md](../../00_docs/02_verilog_simulation_quickstart.md) 문서를 먼저 학습하시는 것을 강력히 권장합니다. 동기식 회로 선언, cocotb 프레임워크 구동 및 Surfer 파형 분석 기법의 기초 뼈대를 선행 학습하시면 워크플로우를 더욱 매끄럽게 파악하실 수 있습니다.
-
 ---
 
 ## 1. 학습 목표 (Learning Objectives)
