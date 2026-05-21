@@ -1,7 +1,7 @@
 # 01_verilog_simulation_quickstart.md: Verilog & RTL Simulation Quickstart
 
 **💡 선행 학습 안내 (Pre-read Guide)**
-> 본 문서는 **Unit 03**의 하드웨어 컴포넌트 설계 실습인 [/03_npu_prototyping/lab/02_hardware_comp_bench.py](../03_npu_prototyping/lab/02_hardware_comp_bench.py)에 진입하기 전, 15~20분 내외로 가볍게 읽어두는 속성 퀵스타트 가이드입니다. 
+> 본 문서는 **Unit 03**의 하드웨어 컴포넌트 설계 실습인 [mac.v](../03_npu_prototyping/lab/03_mac_verilog/mac.v) 및 [test_mac.py](../03_npu_prototyping/lab/03_mac_verilog/test_mac.py)에 진입하기 전, 15~20분 내외로 가볍게 읽어두는 속성 퀵스타트 가이드입니다. 
 > NPU 프로토타이핑에 사용되는 **핵심 Verilog 패턴, cocotb 기반의 파이썬 검증 파이프라인, 그리고 Surfer 파형(Waveform) 분석 기법**만을 압축하여 다루며, 완전한 언어 스펙을 다루지는 않습니다. 실습 시작 전 전체적인 하드웨어 설계 및 디버깅 흐름을 매끄럽게 파악하는 것을 목표로 합니다.
 
 ## 1. 한 모듈의 골격
@@ -248,10 +248,10 @@ surfer ./dump.vcd         # 절대/상대 경로 모두 OK
 ### 1. 프로젝트 아카이브 연결 고리 (A-L Linkage)
 
 * **이론 분석 및 가이드 (Analysis)**:
-  * [02_mac_modeling_report.md](../03_npu_prototyping/analysis/02_mac_modeling_report.md): 본 퀵스타트 가이드에서 학습한 동기식 디지털 회로 구조와 Accumulator 비트 폭 확장 설계 원칙이 실제 하드웨어 MAC Unit 컴포넌트 모델에 어떻게 투영되는지 전력/에너지 비용 모델 분석 보고서와 연계하여 확인하실 수 있습니다.
+  * [03_npu_mac_rtl_report.md](../03_npu_prototyping/analysis/03_npu_mac_rtl_report.md): 본 퀵스타트 가이드에서 학습한 동기식 디지털 회로 구조, cocotb 기반 파이썬 검증 파이프라인 및 Surfer 파형 분석 기법이 실제 하드웨어 Verilog MAC RTL 설계 및 시뮬레이션 환경에 어떻게 투영되고 구체화되는지 상세 분석 보고서와 연계하여 확인하실 수 있습니다.
 
 * **실습 소스 코드 (Lab)**:
-  * [02_hardware_comp_bench.py](../03_npu_prototyping/lab/02_hardware_comp_bench.py): 본 가이드에서 정립한 Verilog 제약 규칙 및 cocotb 테스트벤치 구동 패턴을 직접 베이스로 삼아, 정수형 연산 정합성을 소프트웨어 레벨에서 다이내믹하게 실측 검증하고 3단계 구조 메모리 계층(Register-SRAM-DRAM)의 물리 비용을 시뮬레이션하는 실습 소스 코드 아카이브입니다.
+  * [02_hardware_comp_bench.py](../03_npu_prototyping/lab/02_hardware_comp_bench.py): 본 가이드에서 정립한 Verilog 제약 규칙 및 cocotb 테스트벤치 구동 패턴의 알고리즘적 기준점이 되며, 정수형 연산 정합성을 소프트웨어 레벨에서 다이내믹하게 실측 검증하고 3단계 구조 메모리 계층(Register-SRAM-DRAM)의 물리 비용을 시뮬레이션하는 실습 소스 코드 아카이브입니다.
 
 ### 2. 하드웨어 검증 수립 (Verification Insight)
 
