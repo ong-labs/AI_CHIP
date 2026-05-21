@@ -19,8 +19,8 @@ __pycache__/
 *.ivc
 *.jou
 *.pb
-sim_build/          # cocotb build directory
-results.xml         # test results
+sim_build/
+results.xml
 
 # --- OS Specific ---
 .DS_Store
