@@ -87,7 +87,7 @@ def roofline_chart(npu: NPU, results: dict) -> None:
     ax.grid(True, which="both", alpha=0.3)
     ax.legend(fontsize=8, loc="lower right")
     plt.tight_layout()
-    plt.savefig(output_dir / "04_npu_roofline.png", dpi=100)
+    plt.savefig(output_dir / "05_npu_roofline.png", dpi=100)
 
 
 def cross_compare_table(npu_results: dict) -> None:
