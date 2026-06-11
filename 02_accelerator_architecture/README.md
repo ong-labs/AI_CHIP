@@ -42,6 +42,7 @@ Google TPU의 핵심 구조인 Systolic Array를 사이클 단위로 시뮬레�
 다양한 하드웨어(CPU, GPU, TPU, NPU)의 물리적 한계 지표를 바탕으로, 워크로드의 스케일과 특성에 따라 성능 병목 지점(Compute vs Memory vs Overhead)이 변하는 변곡점을 Roofline 분석 기법으로 규명합니다.
 * **[analysis]** [04_roofline_integrated_report.md](./analysis/04_roofline_integrated_report.md): 하드웨어 아키텍처별 루프라인 통합 성능 분석 보고서
 * **[lab]** [04_roof_hw_work_bench.py](./lab/04_roof_hw_work_bench.py): 하드웨어-워크로드 간 가속 효율 비교 벤치마크
+* **[lab]** [results/04_workload_compare.png](./lab/results/04_workload_compare.png): 가상 NPU 상에서 구동된 3대 핵심 워크로드(자율주행·LLM·영상처리)의 주요 성능 메트릭 비교 분석 플롯 그래프
 * **[mastery]** [04_performance_bottleneck.md](./mastery/04_performance_bottleneck.md): 하드웨어 성능 병목 지점 판단 및 아키텍처 지식 숙달 검증
 
 ---

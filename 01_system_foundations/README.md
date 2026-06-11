@@ -29,7 +29,7 @@ AI 연산의 기초인 MatMul을 통해 소프트웨어 인터프리터 오버�
 * **[analysis]** [02_memory_subsystem.md](./analysis/02_memory_subsystem.md): 캐시 위계 및 메모리 접근 패턴 이론
 * **[analysis]** [02_cache_hierarchy_report.md](./analysis/02_cache_hierarchy_report.md): API 활용 및 메모리 계층 동역학 실측 보고서
 * **[lab]** [02_cache_hierarchy_bench.py](./lab/02_cache_hierarchy_bench.py): Pointer Chasing을 통한 레이턴시 실측
-* **[result]** [02_working_set_result.png](./lab/results/02_working_set_result.png): 하드웨어별 메모리 워킹셋 측정 그래프
+* **[lab]** [results/02_working_set_result.png](./lab/results/02_working_set_result.png): 하드웨어별 메모리 워킹셋 측정 그래프
 * **[mastery]** [02_memory_latency.md](./mastery/02_memory_latency.md): 캐시 미스 및 공간/시간 지역성 개념 숙달
 
 ### Unit 3. SIMD 병렬 연산과 하드웨어 가속
@@ -54,7 +54,7 @@ AI 가속기의 핵심인 NPU의 구조적 특징을 이해하고, Roofline 모�
 * **[analysis]** [05_hw_architecture_comp.md](./analysis/05_hw_architecture_comp.md): CPU/GPU/NPU 아키텍처 심층 비교
 * **[analysis]** [05_hw_architecture_report.md](./analysis/05_hw_architecture_report.md): 하드웨어 아키텍처별 성능 예측 보고서
 * **[lab]** [05_hw_architecture_bench.py](./lab/05_hw_architecture_bench.py): 확장된 Roofline 기반 성능 시뮬레이터
-* **[result]** [05_cpu_gpu_npu_compare.png](./lab/results/05_cpu_gpu_npu_compare.png): 하드웨어 아키텍처별 가속 배율 비교 그래프
+* **[lab]** [results/05_cpu_gpu_npu_compare.png](./lab/results/05_cpu_gpu_npu_compare.png): 하드웨어 아키텍처별 가속 배율 비교 그래프
 * **[mastery]** [05_system_perf_expert.md](./mastery/05_system_perf_expert.md): 아키텍처 비교 분석 및 성능 모델링 숙달
 
 ---
@@ -75,7 +75,7 @@ AI 가속기의 핵심인 NPU의 구조적 특징을 이해하고, Roofline 모�
 │   └── 05_hw_architecture_report.md   # 하드웨어 아키텍처별 성능 예측 보고서
 ├── lab/
 │   ├── results/                       # 실험 결과 데이터 및 시각화 지표
-│   │   ├── 02_working_set_result.png 
+│   │   ├── 02_working_set_result.png  # SRAM 용량별 지연시간 및 워킹셋 분석 그래프
 │   │   └── 05_cpu_gpu_npu_compare.png # 하드웨어 아키텍처별 비교 그래프
 │   ├── 01_matmul_bench.py             # 연산 성능 벤치마크 코드
 │   ├── 02_cache_hierarchy_bench.py    # 메모리 레이턴시 측정 코드
